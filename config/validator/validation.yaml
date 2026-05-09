@@ -1,0 +1,15 @@
+App\Dto\DeviceRequestDto:
+  properties:
+    ip:
+      - NotBlank: ~
+      - Ip:
+          version: v4
+          message: "Invalid IPv4 address"
+    userAgent:
+      - NotBlank: ~
+      - Length:
+          min: 5
+          max: 255
+    isActive:
+      - IsTrue:
+          message: "Device must be active for registration"
